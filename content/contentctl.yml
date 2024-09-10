@@ -3,7 +3,7 @@ version: 1.0
 # General settings for the content
 content:
   name: "Splunk Security Content"
-  author: "Your Company Name"
+  author: "spl test"
   description: "Security detection rules, lookups, and macros for Splunk"
 
 # Define the directory structure for your content
