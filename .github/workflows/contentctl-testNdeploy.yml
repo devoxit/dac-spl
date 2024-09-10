@@ -41,14 +41,10 @@ jobs:
       - name: Install contentctl
         run: |
           pip install contentctl
-      
-      - name: check folder
-        run: |
-          ls -l content
 
       - name: Validate Security Content
         run: |
-          contentctl validate --verbose --path content/
+          contentctl validate --path content/
 
   deploy:
     runs-on: ubuntu-latest
