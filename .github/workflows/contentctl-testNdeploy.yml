@@ -41,6 +41,10 @@ jobs:
       - name: Install contentctl
         run: |
           pip install contentctl
+      
+      - name: check folder
+        run: |
+          ls -l
 
       - name: Validate Security Content
         run: |
