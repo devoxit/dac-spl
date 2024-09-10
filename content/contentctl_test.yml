@@ -10,10 +10,10 @@ infrastructure_config:
   persist_and_reuse_container: true
   full_image_path: registry.hub.docker.com/splunk/splunk:latest
   infrastructures:
-  - splunk_app_username: admin
-    splunk_app_password: password
-    instance_address: 127.0.0.1
-    instance_name: Splunk_Server_Name
+  - splunk_app_username: "${{ secrets.SPLUNK_USER }}"
+    splunk_app_password: "${{ secrets.SPLUNK_PASS }}"
+    instance_address: "${{ secrets.SPLUNK_URL }}"
+    instance_name: Splunk_Server_Test
     hec_port: 8088
     web_ui_port: 8000
     api_port: 8089
