@@ -48,7 +48,7 @@ jobs:
 
       - name: Validate Security Content
         run: |
-          contentctl validate --path content/
+          contentctl validate --verbose --path content/
 
   deploy:
     runs-on: ubuntu-latest
