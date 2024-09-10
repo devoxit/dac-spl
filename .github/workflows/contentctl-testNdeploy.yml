@@ -44,7 +44,7 @@ jobs:
       
       - name: check folder
         run: |
-          ls -l
+          ls -l content
 
       - name: Validate Security Content
         run: |
