@@ -46,30 +46,11 @@ jobs:
         run: |
           contentctl validate --path content/
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: validate
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.x'
-
-      - name: Install contentctl
-        run: |
-          pip install contentctl
-
-      # - name: Deploy Security Content
-      #   run: |
-      #     contentctl deploy --path content/ --splunk-url ${{ secrets.SPLUNK_URL }} --splunk-user ${{ secrets.SPLUNK_USER }} --splunk-pass ${{ secrets.SPLUNK_PASS }}
+  
 
   test:
     runs-on: ubuntu-latest
-    needs: deploy
+    needs: validate
 
     steps:
       - name: Checkout repository
