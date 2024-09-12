@@ -63,9 +63,9 @@ jobs:
         run: |
           pip install contentctl
 
-      - name: Deploy Security Content
-        run: |
-          contentctl deploy --path content/ --splunk-url ${{ secrets.SPLUNK_URL }} --splunk-user ${{ secrets.SPLUNK_USER }} --splunk-pass ${{ secrets.SPLUNK_PASS }}
+      # - name: Deploy Security Content
+      #   run: |
+      #     contentctl deploy --path content/ --splunk-url ${{ secrets.SPLUNK_URL }} --splunk-user ${{ secrets.SPLUNK_USER }} --splunk-pass ${{ secrets.SPLUNK_PASS }}
 
   test:
     runs-on: ubuntu-latest
@@ -86,4 +86,4 @@ jobs:
 
       - name: Test Detection Rules
         run: |
-          contentctl test --path content/tests/
+          contentctl test --path content/
