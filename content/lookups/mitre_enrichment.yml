@@ -1,0 +1,3 @@
+description: A lookup file that will contain mittre enrichment
+filename: mitre_enrichment.csv
+name: mitre_enrichment

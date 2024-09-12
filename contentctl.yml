@@ -1,3 +1,27 @@
+deployment:
+  splunk:
+    server: "${{ secrets.SPLUNK_URL }}" # or set it here if you don't use GitHub secrets
+    username: "${{ secrets.SPLUNK_USER }}"
+    password: "${{ secrets.SPLUNK_PASS }}"
+    app: "Splunk_TA_Security_Content"
+    port: 8089
+
+# Custom checks you want to apply during the validation process
+custom_checks:
+  - id: "check_rule_description"
+    description: "Ensure all detection rules have a description."
+    severity: "high"
+    check: |
+      if not rule.get('description'):
+        return False
+      return True
+  - id: "check_rule_tags"
+    description: "Ensure all detection rules have tags."
+    severity: "medium"
+    check: |
+      if not rule.get('tags'):
+        return False
+      return True
 path: .
 app:
   uid: 44855
